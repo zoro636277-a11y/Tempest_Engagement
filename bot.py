@@ -9,7 +9,7 @@ from aiogram.filters import Command
 TOKEN = "8696423428:AAHkeYBzQGbcXlmCLTQG3YdJiDY5Ndtx7_E"
 
 CHAT_ID = -1003567146417
-
+ADMIN_ID = 123456789
 TOPICS = {
     5: 15,   # 15 Likes
     2: 30    # 30 Engagement
@@ -139,7 +139,27 @@ async def debug_command(message: Message):
         f"chat_id={message.chat.id}\n"
         f"thread_id={message.message_thread_id}"
     )
+@dp.message(Command("reset"))
+async def reset_command(message: Message):
 
+    if message.from_user.id != ADMIN_ID:
+        await message.answer("❌ Admin only.")
+        return
+
+    try:
+        cur.execute("DELETE FROM topic_counter")
+        cur.execute("DELETE FROM user_posts")
+        db.commit()
+
+        await message.answer(
+            "✅ Bot has been reset.\n\n"
+            "• All counts cleared\n"
+            "• All waiting rules cleared\n"
+            "• Everyone can post again"
+        )
+
+    except Exception as e:
+        await message.answer(f"❌ Error: {e}")
 # ---------------- MAIN HANDLER ----------------
 
 @dp.message()
