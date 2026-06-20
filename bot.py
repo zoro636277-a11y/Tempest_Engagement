@@ -9,7 +9,7 @@ from aiogram.filters import Command
 TOKEN = "8696423428:AAHkeYBzQGbcXlmCLTQG3YdJiDY5Ndtx7_E"
 
 CHAT_ID = -1003567146417
-
+ADMIN_ID = 7343042478
 TOPICS = {
     5: 15,   # 15 Likes
     2: 30    # 30 Engagement
@@ -136,7 +136,6 @@ async def count_command(message: Message):
 async def debug_command(message: Message):
 
     await message.answer(
-        f"user_id={message.from_user.id}\n"
         f"chat_id={message.chat.id}\n"
         f"thread_id={message.message_thread_id}"
     )
