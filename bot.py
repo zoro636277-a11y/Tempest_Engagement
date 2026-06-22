@@ -12,7 +12,7 @@ CHAT_ID = -1004351521726
 ADMIN_ID = 7343042478
 TOPICS = {
     5: 15,   # 15 Likes
-    2: 30    # 30 Engagement
+    3: 30    # 30 Engagement
 }
 
 bot = Bot(token=TOKEN)
