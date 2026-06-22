@@ -6,9 +6,9 @@ from aiogram import Bot, Dispatcher
 from aiogram.types import Message, LinkPreviewOptions
 from aiogram.filters import Command
 
-TOKEN = "8696423428:AAHkeYBzQGbcXlmCLTQG3YdJiDY5Ndtx7_E"
+TOKEN = "8696423428:AAHWlnTmlvxG5kQv6KBpaBqAcEm___-CN0M"
 
-CHAT_ID = -1003567146417
+CHAT_ID = -1004351521726
 ADMIN_ID = 7343042478
 TOPICS = {
     5: 15,   # 15 Likes
